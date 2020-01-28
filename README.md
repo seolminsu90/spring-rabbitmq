@@ -1,14 +1,3 @@
-# 외부용역업체 <-> TOP Database
+# Spring 기반의 기본 RabbitMQ 세팅 프로젝트
 
-### 세팅서버 & 역할
-
-- 아직 세팅하지 않음
-- 실시간 게시글 -> AMQP
-- Request&Get -> RESTful
-- application.yml을 외부업체 MQ 서버에 맞게 변경 후 사용
-
-```bash
-java -jar {jarfile}
-```
-
-### default port : 8877
+나중에 쓸 때 찾기 귀찮을 것 같아서 제작

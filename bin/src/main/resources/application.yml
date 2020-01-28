@@ -1,0 +1,35 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3310/article?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 1234
+      connection-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 10
+      pool-name: HikariConnectionPool
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+rabbit:
+  remote:
+    server: localhost
+    port: 5672
+    username: root
+    password: 1234
+    community: 
+      exchange: igs.test.exchange
+      queue: igs.test.queue
+      routekey: igs.test.routekey
+    sample: 
+      exchange: igs.sample.exchange
+      queue: igs.sample.queue
+      routekey: igs.sample.routekey

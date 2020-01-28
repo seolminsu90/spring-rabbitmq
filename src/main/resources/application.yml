@@ -1,0 +1,16 @@
+server:
+  port: 8888
+rabbit:
+  remote:
+    server: localhost
+    port: 5672
+    username: admin
+    password: 123123a
+    community: 
+      exchange: seol.test.exchange
+      queue: seol.test.queue
+      routekey: seol.test.routekey
+    sample: 
+      exchange: seol.sample.exchange
+      queue: seol.sample.queue
+      routekey: seol.sample.routekey

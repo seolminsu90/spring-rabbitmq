@@ -9,11 +9,11 @@
     <version>2.1.8.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.syncer</groupId>
-  <artifactId>top-syncer</artifactId>
+  <groupId>com.delay</groupId>
+  <artifactId>rabbit-delay</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>top-syncer</name>
-  <description>syncronizing crawling data</description>
+  <name>rabbit-delay</name>
+  <description>rabbitmq delayed exchange example</description>
 
   <properties>
     <java.version>1.8</java.version>
@@ -30,11 +30,6 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>

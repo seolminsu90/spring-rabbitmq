@@ -1,4 +1,4 @@
-package com.syncer.config;
+package com.delay.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// Exchange, Queue Bind 초기화. Rabbit 서버에 생성되있지 않은 경우 생성, 연결해준다.
 @Configuration
-public class SampleConsumerConfig {
+public class SampleExchangeConfig {
 
     @Value("${rabbit.remote.sample.routekey}")
     String sampleRouteKey;
@@ -23,7 +24,7 @@ public class SampleConsumerConfig {
     String sampleExchange;
 
     @Bean
-    public Binding bindingsample() {
+    public Binding sampleBinding() {
         return BindingBuilder.bind(sampleQueue()).to(sampleExchange()).with(sampleRouteKey).noargs();
     }
 
@@ -34,7 +35,8 @@ public class SampleConsumerConfig {
 
     @Bean
     public Exchange sampleExchange() {
-        return ExchangeBuilder.directExchange(sampleExchange).build();
+        return ExchangeBuilder.directExchange(sampleExchange).delayed().build(); // delayed 설정 된 direct exchange
+
     }
 
 }
